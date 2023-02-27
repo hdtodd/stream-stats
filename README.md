@@ -1,7 +1,7 @@
 # stream-stats
-Compute basic statistics from an indeterminate stream of data (C and Python versions)
+### Compute basic statistics from an indeterminate stream of data (C and Python versions)
 
-The usual method for computing the standard deviation of a list of numbers is to compute the mean and then sum the squares of the deviations of the individual values from that mean.  That requires storing the list of values.  If the length of the list is very long, or if it is a stream of data of indeterminate length, that approach does not work well.
+The usual method for computing the standard deviation of a list of numbers is to compute the mean and then sum the squares of the deviations of the individual values from that mean.  That requires storing the list of values.  If the length of the list is very long, or if it is a stream of data of indeterminate length, that approach does not work well.  The procedures here do not require storage of the list of values.
 
 ## Method
 
