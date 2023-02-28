@@ -37,13 +37,13 @@ stdy = math.sqrt(stdy/(len(y)-1))
 print("By traditional algorithm, \n\t x count, mean, stdev = \t\t", len(x), avgx, stdx,
       "\n\t y count, mean, stdev = \t\t", len(y), avgy, stdy)
 
-x_stats = stats.stats()
-y_stats = stats.stats()
-i = 0
-while i<len(x):
-   x_stats.append(x[i])
-   y_stats.append(y[i])
-   i += 1
+for i in range(len(x)):
+   if i==0:
+       x_stats = stats.stats(x[i])
+       y_stats = stats.stats(y[i])
+   else:
+       x_stats.append(x[i])
+       y_stats.append(y[i])
 
 (nx,avgx,stdx,minx,maxx) = x_stats.get()
 (ny,avgy,stdy,miny,maxy) = y_stats.get()

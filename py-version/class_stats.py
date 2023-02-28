@@ -4,7 +4,8 @@
 #hdtodd@gmail.com, May, 2022
 
 # Use:
-#   Instantiate:  xstats = stats.stats()
+#   Instantiate:  xstats = stats.stats(x)
+#     creates the stats object with its first data point
 #   Append another sample, x, to the accumulated stats:
 #      xstats.append(x)
 #   Retrieve results:
@@ -14,14 +15,14 @@ import math
 
 class stats():
 
-   def __init__(self):
-      self.count = 0
-      self.mean  = 0.0
+   def __init__(self, x):
+      self.count = 1
+      self.mean  = x
       self.std2  = 0.0
-      self.min   = +float('inf')
-      self.max   = -float('inf')
+      self.min   = x
+      self.max   = x
       
-   def append(self,x):
+   def append(self, x):
       self.count += 1
       self.mean   = ((self.count-1)*self.mean + x)/self.count
       self.std2   = 0 if self.count<2 else ( (self.count-2)*self.std2 +
